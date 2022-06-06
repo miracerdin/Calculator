@@ -19,8 +19,8 @@
 
 const result = document.querySelector("#result");
 const operation = document.querySelector("#operation");
-const buttons = document.querySelector(".buttons");
-
+const buttons = document.querySelectorAll(".btn");
+console.log(buttons);
 buttons.addEventListener("click", (e) => {
   let newInput = e.target.innerText;
   console.log(newInput);
@@ -37,16 +37,23 @@ buttons.addEventListener("click", (e) => {
         4
       ) {
         result.innerText = eval(operation.innerText).toFixed(4);
+      } else {
+        result.innerText = eval(operation.innerText);
       }
-    } else {
-      result.innerText = eval(operation.innerText);
     }
   } else {
+    // if (result.innerText != "") {
+    //   operation.innerText = "";
+    // }
     operation.innerText += newInput;
 
     let operators = ["+", "-", "/", "*"];
-    if (newInput == e.target.querySelector(".btn-.").innerText) {
-      operation.innerText.inc;
-    }
+    // if (newInput == e.target.querySelector(".btn-.").innerText) {
+    //   e.target.parentElement.querySelector(".btn-.")[0].disabled = true;
+    // } else {
+    //   e.target.parentElement.getElementsByClassName(
+    //     "btn-."
+    //   )[0].disabled = false;
+    // }
   }
 });
